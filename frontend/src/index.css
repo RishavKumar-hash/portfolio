@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark text-slate-100 font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-dark;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/60 rounded-full hover:bg-primary;
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100]
+           focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-white
+           focus:font-semibold focus:shadow-lg;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-blue-400 to-accent bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl
+           shadow-lg shadow-black/10;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-bold tracking-tight;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-primary-dark text-white font-semibold
+           hover:shadow-lg hover:shadow-primary/30 transition-all duration-200 hover:scale-[1.03]
+           active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 rounded-xl border border-dark-border text-slate-300 font-semibold
+           hover:border-primary hover:text-primary hover:bg-primary/5
+           transition-all duration-200 hover:scale-[1.03] active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply px-6 py-3 rounded-xl text-slate-400 font-semibold
+           hover:text-primary hover:bg-primary/5 transition-all duration-200;
+  }
+
+  .skill-chip {
+    @apply px-3 py-1.5 rounded-lg bg-dark-card/80 border border-dark-border text-sm font-medium
+           text-slate-300 hover:border-primary/50 hover:text-primary hover:bg-primary/5
+           transition-all duration-200 cursor-default;
+  }
+
+  .section-wrapper {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20;
+  }
+
+  .section-header {
+    @apply flex items-center gap-4 mb-12;
+  }
+
+  .section-divider {
+    @apply flex-1 h-px bg-gradient-to-r from-dark-border to-transparent hidden sm:block;
+  }
+}
