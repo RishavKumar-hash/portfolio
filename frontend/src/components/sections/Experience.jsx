@@ -5,42 +5,55 @@ import { FiBriefcase, FiCalendar, FiMapPin, FiAward, FiCheckCircle } from "react
 const experiences = [
   {
     role: "System Engineer / Software Developer",
-    company: "Nokia Solutions — Contractor via Tata Consultancy Services (TCS)",
-    period: "Aug 2024 – Present",
-    location: "India (On-site)",
-    type: "Full-time Enterprise (2+ Yrs Exp)",
+    company: "Nokia Solutions (Contractor via Tata Consultancy Services)",
+    period: "Jul 2025 – Present",
+    location: "On-site, India",
+    type: "Full-time Enterprise",
     color: "cyan",
-    impactBadge: "⚡ 5+ Microservices · 100+ Clients · 70+ Defect Fixes · 30% CI/CD Speedup",
+    impactBadge: "⚡ Team Lead (Team of 5) · Automation Product Delivered & Sold · 50+ Critical Prod Fixes",
     points: [
-      "Designed, developed, integrated, and maintained 5+ Java, Spring Boot, Spring Security, and REST-based microservices supporting secure web and API experiences for 100+ enterprise clients.",
-      "Developed and integrated RESTful APIs consumed by React-based web applications, implementing authentication, authorization, access control, role-based workflows, validation, and business logic across 10+ modules.",
-      "Contributed to modern web application development by refactoring React/JavaScript network automation functionality using React Query, Keycloak SSO, feature-based components, and role-based routing across 6+ modules.",
-      "Implemented secure web and API functionality using IAM, AuthN/AuthZ, RBAC, JWT, OAuth2, Keycloak, input validation, and access-control checks.",
-      "Created and maintained 30+ automated API test cases covering functional testing, validation, authentication, authorization, positive/negative scenarios, error handling, and regression testing using JUnit, Mockito, and Postman.",
-      "Investigated and resolved 70+ production defects through debugging, log analysis, API validation, code investigation, root-cause analysis, and coordinated fixes.",
-      "Refactored Python-based CI/CD and deployment automation, reducing deployment preparation effort by approximately 30% and improving workflow repeatability.",
-      "Worked with Git, GitHub, Maven, Docker, Linux, Jenkins, and CI/CD pipelines to build, test, integrate, and deploy production software within Agile/Scrum sprint timelines across 3+ cross-functional teams.",
-      "Created and maintained technical documentation for 10+ modules covering application workflows, APIs, implementation details, testing scenarios, and operational procedures.",
+      "Lead multiple customer projects end to end: gather requirements from customers, analyse existing architecture, develop integration adapters, verify architecture/adapters, and hand over verified solutions to customers.",
+      "Built from scratch and led a team of 5 to deliver an automation software automating client business processes (Java, Python, MariaDB, React, AI); product was successfully delivered and sold to a customer.",
+      "Resolved 50+ critical production issues across authentication, access control, and REST API integrations by analysing application logs and tracing failures to root cause, improving reliability for 100+ enterprise clients.",
+      "Refactored Python automation scripts in CI/CD pipelines, cutting deployment time by 30% and reducing manual intervention.",
+      "Developed and maintained 5+ Java/Spring Boot backend microservices for the NIAM platform and refactored a React-based network automation UI across 6+ modules.",
+      "Worked with 3+ Agile/Scrum teams, reviewed 100+ code commits, and wrote documentation for 10+ modules.",
     ],
     tags: [
       "Java",
       "Spring Boot",
-      "Spring Security",
-      "REST APIs",
-      "React",
-      "JavaScript",
-      "React Query",
-      "Keycloak",
-      "OAuth2",
-      "JWT",
-      "RBAC",
-      "PostgreSQL",
-      "Docker",
-      "Jenkins",
-      "CI/CD",
       "Python",
-      "JUnit / Mockito",
+      "React",
+      "MariaDB",
+      "REST APIs",
+      "Integration Adapters",
+      "CI/CD Pipelines",
+      "NIAM Platform",
       "Agile / Scrum",
+      "Microservices",
+      "Technical Documentation",
+    ],
+  },
+  {
+    role: "Software Developer Intern",
+    company: "Nokia Solutions",
+    period: "Aug 2024 – May 2025",
+    location: "On-site, India",
+    type: "Internship",
+    color: "accent",
+    impactBadge: "🔒 30+ Automated API Test Cases · 20+ Defects Resolved · 40% Incident Response Speedup",
+    points: [
+      "Automated 30+ Java backend API test cases, improving test coverage for authentication and access management modules.",
+      "Resolved 20+ backend defects, improving application stability by 25% and cutting average incident response time by 40%.",
+    ],
+    tags: [
+      "Java",
+      "Backend API Testing",
+      "Spring Security",
+      "Authentication APIs",
+      "Access Control",
+      "Defect Resolution",
+      "JUnit / Mockito",
     ],
   },
 ];
@@ -87,7 +100,7 @@ export default function Experience() {
           <div className="space-y-12 pl-12 sm:pl-20">
             {experiences.map((exp, i) => (
               <motion.div
-                key={exp.role}
+                key={exp.role + exp.period}
                 initial={{ opacity: 0, x: -30 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.2, duration: 0.6 }}
