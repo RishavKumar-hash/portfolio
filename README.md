@@ -2,18 +2,21 @@
 
 Personal portfolio website showcasing my work as a **Backend Software Engineer** at Nokia via TCS.
 
-**Live site:** [frontend-vert-two-82.vercel.app](https://frontend-vert-two-82.vercel.app)
+**Live site (copy exactly for job portals):** `https://rishavkumar-portfolio.vercel.app`
+
+> Always include the `https://` prefix — company portals reject URLs without it.
 
 ---
 
 ## Features
 
+- Immersive **3D WebGL background** (React Three Fiber) with interactive hero card
 - Responsive dark-theme UI with smooth animations
 - Hero, About, Skills, Certifications, Experience, Projects, Contact sections
 - Animated stats, typewriter roles, scroll progress
 - GitHub projects integration
-- Contact form (FormSubmit in production, Spring Boot locally)
-- SEO meta tags & Open Graph
+- Contact form (FormSubmit in production)
+- SEO meta tags, canonical URL & Open Graph
 
 ---
 
@@ -21,9 +24,9 @@ Personal portfolio website showcasing my work as a **Backend Software Engineer**
 
 | Layer | Technologies |
 |-------|-------------|
-| **Frontend** | React 18, Vite, Tailwind CSS, Framer Motion, React Hook Form |
-| **Backend** | Spring Boot 3, Java 21, Spring Mail (local dev) |
-| **Deployment** | Vercel (frontend), auto-deploys on `git push` |
+| **Frontend** | React 18, Vite, Tailwind CSS, Framer Motion, Three.js, React Three Fiber |
+| **Backend** | Spring Boot 3 (optional, local dev) |
+| **Deployment** | Vercel — HTTPS by default |
 
 ---
 
@@ -31,11 +34,19 @@ Personal portfolio website showcasing my work as a **Backend Software Engineer**
 
 ```
 portfolio/
-├── frontend/          # React + Vite + Tailwind
-│   ├── public/        # Static assets (pic.png, favicon, resume PDF)
+├── frontend/
+│   ├── public/                 # Static assets (photo, resume, favicon)
 │   └── src/
-│       └── components/
-└── backend/           # Spring Boot contact API (optional, local dev)
+│       ├── config/
+│       │   └── site.js         # Canonical URL, social links, nav
+│       ├── components/
+│       │   ├── layout/         # Header, Footer, ScrollProgress, BackToTop
+│       │   ├── sections/       # Hero, About, Skills, Projects, etc.
+│       │   ├── ui/             # Shared UI (BackgroundEffects, ProfileImage)
+│       │   └── three/          # WebGL 3D scene
+│       ├── App.jsx
+│       └── main.jsx
+└── vercel.json
 ```
 
 ---

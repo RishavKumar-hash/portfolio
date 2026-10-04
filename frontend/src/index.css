@@ -8,11 +8,11 @@
   }
 
   body {
-    @apply bg-dark text-slate-100 font-sans antialiased;
-  }
-
-  ::selection {
-    @apply bg-primary/30 text-white;
+    @apply bg-dark text-slate-100 font-sans antialiased selection:bg-primary/30 selection:text-white;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.07) 0%, transparent 50%),
+      radial-gradient(circle at 100% 40%, rgba(139, 92, 246, 0.05) 0%, transparent 40%);
+    background-attachment: fixed;
   }
 
   :focus-visible {
@@ -26,55 +26,70 @@
     @apply bg-dark;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary/60 rounded-full hover:bg-primary;
+    @apply bg-primary/40 rounded-full hover:bg-primary/80 transition-colors;
   }
 }
 
 @layer components {
   .skip-link {
     @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100]
-           focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-white
-           focus:font-semibold focus:shadow-lg;
+           focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-dark
+           focus:font-bold focus:shadow-lg;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary via-blue-400 to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-cyan-400 to-accent bg-clip-text text-transparent;
+  }
+
+  .gradient-text-emerald {
+    @apply bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent;
   }
 
   .glass-card {
-    @apply bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-2xl
-           shadow-lg shadow-black/10;
+    @apply bg-dark-card/70 backdrop-blur-xl border border-dark-border rounded-2xl
+           shadow-xl transition-all duration-300;
+  }
+
+  .glass-card-hover {
+    @apply hover:border-primary/40 hover:shadow-glow hover:-translate-y-0.5;
+  }
+
+  .cyber-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   }
 
   .section-title {
-    @apply text-3xl sm:text-4xl font-bold tracking-tight;
+    @apply text-3xl sm:text-4xl font-extrabold tracking-tight;
   }
 
   .badge {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium tracking-wide;
   }
 
   .btn-primary {
-    @apply px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-primary-dark text-white font-semibold
-           hover:shadow-lg hover:shadow-primary/30 transition-all duration-200 hover:scale-[1.03]
-           active:scale-[0.98];
+    @apply px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-cyan-500 text-slate-950 font-bold
+           hover:shadow-glow hover:scale-[1.02] active:scale-[0.98]
+           transition-all duration-200 cursor-pointer flex items-center justify-center gap-2;
   }
 
   .btn-outline {
-    @apply px-6 py-3 rounded-xl border border-dark-border text-slate-300 font-semibold
-           hover:border-primary hover:text-primary hover:bg-primary/5
-           transition-all duration-200 hover:scale-[1.03] active:scale-[0.98];
+    @apply px-6 py-3 rounded-xl border border-dark-border text-slate-200 font-semibold bg-dark-card/50
+           hover:border-primary/60 hover:text-primary hover:bg-primary/10 hover:shadow-glow
+           transition-all duration-200 cursor-pointer flex items-center justify-center gap-2;
   }
 
   .btn-ghost {
     @apply px-6 py-3 rounded-xl text-slate-400 font-semibold
-           hover:text-primary hover:bg-primary/5 transition-all duration-200;
+           hover:text-primary hover:bg-primary/10 transition-all duration-200 cursor-pointer;
   }
 
   .skill-chip {
-    @apply px-3 py-1.5 rounded-lg bg-dark-card/80 border border-dark-border text-sm font-medium
-           text-slate-300 hover:border-primary/50 hover:text-primary hover:bg-primary/5
-           transition-all duration-200 cursor-default;
+    @apply px-3 py-1.5 rounded-lg bg-dark-card/90 border border-dark-border text-xs sm:text-sm font-medium
+           text-slate-300 hover:border-primary/50 hover:text-primary hover:bg-primary/10 hover:shadow-sm
+           transition-all duration-200 cursor-default inline-flex items-center gap-1.5;
   }
 
   .section-wrapper {
@@ -86,6 +101,7 @@
   }
 
   .section-divider {
-    @apply flex-1 h-px bg-gradient-to-r from-dark-border to-transparent hidden sm:block;
+    @apply flex-1 h-px bg-gradient-to-r from-dark-border via-primary/30 to-transparent hidden sm:block;
   }
 }
+

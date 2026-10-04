@@ -28,3 +28,5 @@ frontend/.vercel/
 # Logs
 *.log
 npm-debug.log*
+
+.vercel
