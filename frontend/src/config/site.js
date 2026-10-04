@@ -1,5 +1,5 @@
 /** Primary portfolio domain */
-export const SITE_URL = "https://rishav-kumar-portfolio.netlify.app";
+export const SITE_URL = "https://rishavkumar-portfolio.netlify.app";
 
 export const SITE_NAME = "Rishav Kumar";
 export const SITE_TAGLINE = "Backend Software Engineer";
