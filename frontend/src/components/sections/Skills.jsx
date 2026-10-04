@@ -1,44 +1,70 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FiCode, FiSearch, FiCheckCircle } from "react-icons/fi";
+import { FiSearch, FiCheckCircle } from "react-icons/fi";
 
 const skillGroups = [
   {
-    category: "Backend Frameworks",
+    category: "Languages",
+    tag: "languages",
+    color: "from-blue-500 to-cyan-500",
+    skills: [
+      { name: "Java", level: "Expert" },
+      { name: "JavaScript", level: "Proficient" },
+      { name: "Python", level: "Proficient" },
+      { name: "C++", level: "Familiar" },
+      { name: "SQL", level: "Expert" },
+    ],
+  },
+  {
+    category: "Backend & Microservices",
     tag: "backend",
-    color: "from-cyan-500 to-blue-500",
+    color: "from-cyan-500 to-blue-600",
     skills: [
       { name: "Spring Boot", level: "Expert" },
       { name: "Spring Security", level: "Expert" },
-      { name: "RESTful APIs", level: "Expert" },
       { name: "Spring MVC", level: "Proficient" },
-      { name: "JPA / Hibernate", level: "Expert" },
-      { name: "Microservices", level: "Proficient" },
+      { name: "REST APIs", level: "Expert" },
+      { name: "Microservices Architecture", level: "Expert" },
+      { name: "Hibernate / JPA", level: "Expert" },
+    ],
+  },
+  {
+    category: "Web & Frontend",
+    tag: "frontend",
+    color: "from-pink-500 to-rose-500",
+    skills: [
+      { name: "React / React.js", level: "Proficient" },
+      { name: "React Query", level: "Proficient" },
+      { name: "Role-Based Routing", level: "Expert" },
+      { name: "JavaScript (ES6+)", level: "Proficient" },
+      { name: "HTML5 / CSS3", level: "Expert" },
+    ],
+  },
+  {
+    category: "API Engineering",
+    tag: "api",
+    color: "from-indigo-500 to-purple-500",
+    skills: [
+      { name: "RESTful APIs", level: "Expert" },
+      { name: "API Integration & Consumption", level: "Expert" },
+      { name: "JSON Data Handling", level: "Expert" },
+      { name: "AuthN/AuthZ APIs", level: "Expert" },
+      { name: "Input Validation", level: "Expert" },
     ],
   },
   {
     category: "Security & IAM Domain",
     tag: "security",
-    color: "from-violet-500 to-purple-500",
+    color: "from-violet-500 to-purple-600",
     skills: [
+      { name: "IAM Security", level: "Expert" },
+      { name: "AuthN / AuthZ", level: "Expert" },
+      { name: "RBAC (Role-Based Access)", level: "Expert" },
+      { name: "JWT", level: "Expert" },
       { name: "OAuth2", level: "Expert" },
-      { name: "JWT Authentication", level: "Expert" },
-      { name: "RBAC Access Control", level: "Expert" },
-      { name: "NIAM Platform", level: "Proficient" },
-      { name: "API Gateways", level: "Proficient" },
-    ],
-  },
-  {
-    category: "Core Languages",
-    tag: "languages",
-    color: "from-blue-500 to-emerald-500",
-    skills: [
-      { name: "Java", level: "Expert" },
-      { name: "Python", level: "Proficient" },
-      { name: "SQL", level: "Expert" },
-      { name: "JavaScript", level: "Proficient" },
-      { name: "C++", level: "Familiar" },
+      { name: "Keycloak SSO", level: "Proficient" },
+      { name: "Secure Coding", level: "Expert" },
     ],
   },
   {
@@ -49,42 +75,47 @@ const skillGroups = [
       { name: "PostgreSQL", level: "Expert" },
       { name: "MySQL", level: "Expert" },
       { name: "MariaDB", level: "Proficient" },
-      { name: "PL/SQL", level: "Proficient" },
+      { name: "Relational Databases", level: "Expert" },
+      { name: "Query Optimization", level: "Proficient" },
     ],
   },
   {
-    category: "Cloud, DevOps & Tools",
+    category: "Testing & QA Automation",
+    tag: "testing",
+    color: "from-teal-500 to-cyan-500",
+    skills: [
+      { name: "JUnit", level: "Expert" },
+      { name: "Mockito", level: "Expert" },
+      { name: "Postman API Testing", level: "Expert" },
+      { name: "Automated API Testing", level: "Expert" },
+      { name: "Regression Testing", level: "Proficient" },
+    ],
+  },
+  {
+    category: "DevOps, Cloud & Tools",
     tag: "devops",
     color: "from-orange-500 to-amber-500",
     skills: [
-      { name: "AWS", level: "Certified" },
       { name: "Docker", level: "Proficient" },
-      { name: "Git / GitHub", level: "Expert" },
+      { name: "Jenkins", level: "Proficient" },
       { name: "CI/CD Pipelines", level: "Proficient" },
-      { name: "Linux / Shell", level: "Proficient" },
-      { name: "Postman API", level: "Expert" },
-    ],
-  },
-  {
-    category: "Frontend & Methodologies",
-    tag: "frontend",
-    color: "from-pink-500 to-rose-500",
-    skills: [
-      { name: "ReactJS", level: "Proficient" },
-      { name: "Agile / Scrum", level: "Expert" },
-      { name: "System Design", level: "Proficient" },
-      { name: "Data Structures & Algo", level: "Expert" },
+      { name: "Git / GitHub", level: "Expert" },
+      { name: "Maven", level: "Expert" },
+      { name: "Linux / Shell Automation", level: "Proficient" },
+      { name: "AWS Fundamentals", level: "Certified" },
     ],
   },
 ];
 
 const categories = [
   { id: "all", label: "All Skills" },
-  { id: "backend", label: "Backend & Frameworks" },
-  { id: "security", label: "Security & IAM" },
   { id: "languages", label: "Languages" },
+  { id: "backend", label: "Backend & Microservices" },
+  { id: "frontend", label: "Frontend" },
+  { id: "security", label: "Security & IAM" },
   { id: "database", label: "Databases" },
-  { id: "devops", label: "Cloud & DevOps" },
+  { id: "testing", label: "Testing" },
+  { id: "devops", label: "DevOps & Tools" },
 ];
 
 export default function Skills() {
@@ -142,7 +173,7 @@ export default function Skills() {
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search skill (e.g. Java, OAuth)"
+              placeholder="Search skill (e.g. Java, Keycloak)"
               className="w-full pl-9 pr-4 py-1.5 text-xs rounded-xl bg-dark border border-dark-border text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-400 font-mono"
             />
           </div>

@@ -5,13 +5,12 @@ import {
   FiLinkedin,
   FiMail,
   FiArrowDown,
-  FiTerminal,
   FiShield,
   FiCheck,
   FiCopy,
   FiBriefcase,
   FiMapPin,
-  FiHome,
+  FiDownload,
 } from "react-icons/fi";
 import Typewriter from "typewriter-effect";
 import ProfileImage from "../ui/ProfileImage";
@@ -24,14 +23,14 @@ const socialLinks = [
 ];
 
 const roles = [
-  "Backend Software Engineer",
-  "Java & Spring Boot Specialist",
-  "Enterprise IAM Security Developer",
-  "OAuth2 / JWT Architecture Expert",
-  "Microservices & REST API Engineer",
+  "Backend Software Engineer (2+ Yrs Exp)",
+  "Java & Spring Boot Developer",
+  "REST API & Microservices Specialist",
+  "Enterprise Security & Keycloak Engineer",
+  "Full-Stack Web Developer",
 ];
 
-export default function Hero({ onOpenTerminal, onOpenIam }) {
+export default function Hero({ onOpenIam }) {
   const [emailCopied, setEmailCopied] = useState(false);
 
   const copyEmail = () => {
@@ -61,7 +60,7 @@ export default function Hero({ onOpenTerminal, onOpenIam }) {
             >
               <div className="badge bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block mr-1" />
-                Available for SDE & Backend Roles
+                2+ Years Experience · Open to SDE & Backend Roles
               </div>
               <div className="badge bg-dark-card border border-dark-border text-slate-400 text-xs font-mono">
                 <FiBriefcase className="text-cyan-400" /> Nokia Solutions (via TCS)
@@ -76,10 +75,7 @@ export default function Hero({ onOpenTerminal, onOpenIam }) {
               className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400"
             >
               <span className="flex items-center gap-1.5 bg-dark-card/60 px-2.5 py-1 rounded-lg border border-dark-border">
-                <FiMapPin className="text-cyan-400" /> Noida, UP (Current)
-              </span>
-              <span className="flex items-center gap-1.5 bg-dark-card/60 px-2.5 py-1 rounded-lg border border-dark-border">
-                <FiHome className="text-accent" /> Sonepur, Bihar (Hometown)
+                <FiMapPin className="text-cyan-400" /> Noida, India (Current)
               </span>
             </motion.div>
 
@@ -89,7 +85,7 @@ export default function Hero({ onOpenTerminal, onOpenIam }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <p className="text-slate-400 text-base sm:text-lg font-mono mb-2">Hello, World 👋 I&apos;m</p>
+              <p className="text-slate-400 text-base sm:text-lg font-mono mb-2">Hello 👋 I&apos;m</p>
               <h1 className="text-4xl sm:text-6xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.08] tracking-tight">
                 <span className="gradient-text">Rishav</span>{" "}
                 <span className="text-slate-100">Kumar</span>
@@ -123,12 +119,11 @@ export default function Hero({ onOpenTerminal, onOpenIam }) {
               transition={{ delay: 0.45 }}
               className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-sans"
             >
-              Engineered enterprise security modules & REST APIs at{" "}
+              Software Engineer with <span className="text-cyan-400 font-bold">2+ years of experience</span> developing secure, scalable web applications, REST APIs, backend microservices, and developer automation for enterprise clients at{" "}
               <span className="text-slate-100 font-semibold underline decoration-cyan-500/50 decoration-2 underline-offset-4">
                 Nokia Solutions (via TCS)
               </span>
-              . Resolved <span className="text-cyan-400 font-bold">50+ critical production issues</span> across 100+ enterprise client deployments and reduced CI/CD build cycles by{" "}
-              <span className="text-emerald-400 font-bold">30%</span>.
+              . Engineered <span className="text-emerald-400 font-bold">5+ production microservices</span> supporting 100+ enterprise clients.
             </motion.p>
 
             {/* Action Buttons */}
@@ -142,14 +137,15 @@ export default function Hero({ onOpenTerminal, onOpenIam }) {
                 View Projects
               </a>
               <button onClick={onOpenIam} className="btn-outline">
-                <FiShield className="text-cyan-400" /> IAM Demo
+                <FiShield className="text-cyan-400" /> Security Architecture Demo
               </button>
-              <button
-                onClick={onOpenTerminal}
-                className="btn-outline font-mono text-xs text-cyan-400 border-cyan-500/40"
+              <a
+                href="/RishavKumar_SDE.pdf"
+                download
+                className="btn-outline text-slate-200 border-slate-700 hover:border-cyan-400"
               >
-                <FiTerminal /> CLI Mode
-              </button>
+                <FiDownload /> Resume (PDF)
+              </a>
             </motion.div>
 
             {/* Social Links & Quick Copy Email */}
@@ -202,8 +198,8 @@ export default function Hero({ onOpenTerminal, onOpenIam }) {
 
                 <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl glass-card border-dark-border/80 backdrop-blur-md">
                   <p className="text-[11px] font-mono text-cyan-400 font-semibold">CURRENT ROLE</p>
-                  <p className="text-sm font-bold text-slate-100">System Engineer @ Nokia</p>
-                  <p className="text-xs text-slate-400">Contractor via TCS</p>
+                  <p className="text-sm font-bold text-slate-100">Software Developer / System Engineer</p>
+                  <p className="text-xs text-slate-400">Nokia Solutions (via TCS)</p>
                 </div>
               </div>
 
@@ -213,7 +209,7 @@ export default function Hero({ onOpenTerminal, onOpenIam }) {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-4 -right-4 bg-gradient-to-br from-cyan-500 to-primary rounded-2xl px-4 py-2.5 shadow-xl text-slate-950 border border-white/20"
               >
-                <p className="text-xl font-extrabold leading-none">1+ Year</p>
+                <p className="text-xl font-extrabold leading-none">2+ Years</p>
                 <p className="text-[10px] font-bold uppercase tracking-wider">Enterprise Exp.</p>
               </motion.div>
 
@@ -224,9 +220,9 @@ export default function Hero({ onOpenTerminal, onOpenIam }) {
                 className="absolute -bottom-4 -left-4 glass-card px-3.5 py-2 shadow-xl border-cyan-500/40 text-left"
               >
                 <p className="text-xs font-bold text-slate-100 flex items-center gap-1.5">
-                  <FiShield className="text-cyan-400" /> IAM & Security
+                  <FiShield className="text-cyan-400" /> IAM & REST Security
                 </p>
-                <p className="text-[10px] text-slate-400 font-mono">OAuth2 · JWT · RBAC</p>
+                <p className="text-[10px] text-slate-400 font-mono">OAuth2 · JWT · Keycloak SSO</p>
               </motion.div>
             </div>
           </motion.div>

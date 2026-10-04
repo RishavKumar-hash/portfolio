@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FiMapPin, FiHome, FiMail, FiPhone, FiBookOpen, FiAward, FiCheck, FiCopy } from "react-icons/fi";
+import { FiMapPin, FiMail, FiPhone, FiBookOpen, FiAward, FiCheck, FiCopy, FiFileText } from "react-icons/fi";
 import ProfileImage from "../ui/ProfileImage";
+import { SITE_EMAIL, SITE_PHONE } from "../../config/site";
 
 export default function About() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
@@ -15,24 +16,24 @@ export default function About() {
   };
 
   const info = [
-    { icon: FiMapPin, label: "Current Location", value: "Noida, UP (NCR Region)" },
-    { icon: FiHome, label: "Hometown", value: "Sonepur, Bihar" },
+    { icon: FiMapPin, label: "Current Location", value: "Noida, UP, India" },
     {
       icon: FiMail,
       label: "Email Address",
-      value: "rishavkr5302@gmail.com",
-      action: () => copyToClipboard("rishavkr5302@gmail.com", "Email"),
+      value: SITE_EMAIL,
+      action: () => copyToClipboard(SITE_EMAIL, "Email"),
       actionLabel: "Email",
     },
     {
       icon: FiPhone,
       label: "Phone",
-      value: "+91 9508843814",
-      action: () => copyToClipboard("+919508843814", "Phone"),
+      value: SITE_PHONE,
+      action: () => copyToClipboard(SITE_PHONE, "Phone"),
       actionLabel: "Phone",
     },
     { icon: FiBookOpen, label: "Education", value: "B.E. Computer Science — Chandigarh University (CGPA 8.5 / 10)" },
-    { icon: FiAward, label: "Certifications", value: "AWS Certified Cloud Practitioner, Java Software Design (UC San Diego)" },
+    { icon: FiAward, label: "Certifications", value: "Coursera/UCSD Java & DSA · AWS Cloud Practitioner · ML Intro" },
+    { icon: FiFileText, label: "Publications", value: "Springer BIDA 2024 & Scopus Indexed Journal 2024" },
   ];
 
   return (
@@ -49,7 +50,7 @@ export default function About() {
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider mb-1 block">
                 ABOUT RISHAV
               </span>
-              <h2 className="section-title">Engineering Background & Core Focus</h2>
+              <h2 className="section-title">Professional Overview & Engineering Focus</h2>
             </div>
             <div className="section-divider" />
           </div>
@@ -63,14 +64,14 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-100">Rishav Kumar</h3>
-                  <p className="text-sm font-semibold text-cyan-400">Backend Software Engineer</p>
-                  <p className="text-xs text-slate-400 mt-1">Nokia Solutions (via TCS Contractor)</p>
+                  <p className="text-sm font-semibold text-cyan-400">Software Engineer / System Engineer</p>
+                  <p className="text-xs text-slate-400 mt-1">Nokia Solutions — Contractor via TCS</p>
                   <div className="flex flex-wrap gap-2 mt-2">
                     <span className="badge bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[11px]">
-                      Noida, UP
+                      Noida, India
                     </span>
-                    <span className="badge bg-accent/10 border border-accent/30 text-accent text-[11px]">
-                      Sonepur, Bihar
+                    <span className="badge bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px]">
+                      2+ Years Experience
                     </span>
                   </div>
                 </div>
@@ -78,18 +79,15 @@ export default function About() {
 
               <div className="space-y-4 text-sm sm:text-base font-sans">
                 <p>
-                  I am a <span className="text-slate-100 font-bold">Backend Software Engineer</span> specializing in{" "}
-                  <span className="text-cyan-400 font-semibold">Java, Spring Boot, Microservices, and Enterprise Identity & Access Management (IAM)</span>.
-                  Currently at <span className="text-slate-100 font-semibold">Nokia via TCS</span>, I engineer mission-critical backend modules powering identity, authentication, and access control for over 100 enterprise clients.
+                  Software Engineer with <span className="text-slate-100 font-bold">2+ years of experience</span> developing and maintaining secure, scalable web applications, REST APIs, backend microservices, and developer automation for enterprise clients.
                 </p>
 
                 <p>
-                  With <span className="text-emerald-400 font-semibold">50+ critical production defect resolutions</span> under my belt, I excel at diagnosing complex REST API bottlenecks, OAuth2/JWT security tokens, RBAC permission grants, and Spring Security configurations in live enterprise environments.
+                  At <span className="text-cyan-400 font-semibold">Nokia Solutions (via TCS)</span>, I engineered and integrated <span className="text-slate-100 font-bold">5+ Java, Spring Boot, Spring Security, and REST microservices</span> supporting 100+ enterprise clients. I also refactored React/JavaScript network automation frontend interfaces across 6+ modules using React Query, Keycloak SSO, and role-based routing.
                 </p>
 
                 <p>
-                  Additionally, I refactored Python CI/CD pipeline scripts resulting in a{" "}
-                  <span className="text-cyan-400 font-semibold">30% reduction in deployment time</span>. Beyond enterprise work, I build scalable full-stack applications (like <span className="text-slate-100 font-semibold">TaskHive</span>) and have authored 2 peer-reviewed research publications in Machine Learning & IoT.
+                  I bring strong hands-on expertise in <span className="text-emerald-400 font-semibold">IAM, AuthN/AuthZ, RBAC, JWT, OAuth2, Keycloak, input validation</span>, automated testing with JUnit & Mockito, root-cause analysis for 70+ production defects, and Python CI/CD pipeline automation (reducing deployment prep by ~30%).
                 </p>
               </div>
             </div>

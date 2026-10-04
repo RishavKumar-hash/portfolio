@@ -1,14 +1,14 @@
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
-import { FiCheckCircle, FiShield, FiUsers, FiZap, FiCode, FiBookOpen } from "react-icons/fi";
+import { FiCheckCircle, FiShield, FiUsers, FiZap, FiCheckSquare, FiBookOpen } from "react-icons/fi";
 
 const stats = [
-  { value: 1, suffix: "+", label: "Years Enterprise Exp", icon: FiShield, color: "text-cyan-400" },
-  { value: 50, suffix: "+", label: "Critical Prod Issue Fixes", icon: FiCheckCircle, color: "text-emerald-400" },
+  { value: 2, suffix: "+", label: "Years Enterprise Exp", icon: FiShield, color: "text-cyan-400" },
+  { value: 70, suffix: "+", label: "Production Defects Resolved", icon: FiCheckCircle, color: "text-emerald-400" },
   { value: 100, suffix: "+", label: "Enterprise Clients Supported", icon: FiUsers, color: "text-accent" },
-  { value: 30, suffix: "%", label: "CI/CD Speedup", icon: FiZap, color: "text-cyan-400" },
-  { value: 15, suffix: "+", label: "REST APIs Engineered", icon: FiCode, color: "text-emerald-400" },
+  { value: 30, suffix: "%", label: "CI/CD Prep Speedup", icon: FiZap, color: "text-cyan-400" },
+  { value: 30, suffix: "+", label: "Automated API Test Suites", icon: FiCheckSquare, color: "text-emerald-400" },
   { value: 2, suffix: "", label: "Research Publications", icon: FiBookOpen, color: "text-amber-400" },
 ];
 

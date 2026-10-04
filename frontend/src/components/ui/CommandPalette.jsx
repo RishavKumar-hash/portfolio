@@ -10,14 +10,14 @@ import {
   FiFolder,
   FiMail,
   FiDownload,
-  FiTerminal,
   FiShield,
   FiCheck,
   FiCopy,
+  FiAward,
 } from "react-icons/fi";
 import { SITE_EMAIL } from "../../config/site";
 
-export default function CommandPalette({ isOpen, onClose, onOpenTerminal, onOpenIam }) {
+export default function CommandPalette({ isOpen, onClose, onOpenIam }) {
   const [query, setQuery] = useState("");
   const [copied, setCopied] = useState(false);
 
@@ -51,10 +51,10 @@ export default function CommandPalette({ isOpen, onClose, onOpenTerminal, onOpen
       action: () => scrollToSection("about"),
     },
     {
-      title: "Interactive IAM Security Playground",
+      title: "Security Architecture & IAM Demo",
       section: "iam-demo",
       icon: FiShield,
-      category: "Interactive",
+      category: "Interactive Demo",
       action: () => {
         onClose(false);
         if (onOpenIam) onOpenIam();
@@ -62,17 +62,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenTerminal, onOpen
       },
     },
     {
-      title: "Open Interactive RK-OS Terminal",
-      section: "terminal",
-      icon: FiTerminal,
-      category: "Interactive",
-      action: () => {
-        onClose(false);
-        if (onOpenTerminal) onOpenTerminal();
-      },
-    },
-    {
-      title: "Jump to Tech Stack & Skills",
+      title: "Jump to Technical Skills",
       section: "skills",
       icon: FiCode,
       category: "Navigation",
@@ -86,11 +76,18 @@ export default function CommandPalette({ isOpen, onClose, onOpenTerminal, onOpen
       action: () => scrollToSection("experience"),
     },
     {
-      title: "Jump to Projects Matrix",
+      title: "Jump to Projects & Publications",
       section: "projects",
       icon: FiFolder,
       category: "Navigation",
       action: () => scrollToSection("projects"),
+    },
+    {
+      title: "Jump to Certifications",
+      section: "certifications",
+      icon: FiAward,
+      category: "Navigation",
+      action: () => scrollToSection("certifications"),
     },
     {
       title: "Jump to Contact",
@@ -163,7 +160,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenTerminal, onOpen
                 autoFocus
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Type a command or section name... (e.g. IAM, Projects, Terminal)"
+                placeholder="Type a command or section name... (e.g. Skills, Projects, Experience)"
                 className="w-full bg-transparent text-slate-100 placeholder-slate-500 text-sm focus:outline-none"
               />
               <button
@@ -217,7 +214,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenTerminal, onOpen
             </div>
 
             <div className="flex items-center justify-between px-4 py-2 bg-dark/90 border-t border-dark-border text-[11px] text-slate-500 font-mono">
-              <span>Navigation & Commands</span>
+              <span>Quick Navigation & Shortcuts</span>
               <div className="flex gap-2">
                 <span><kbd className="px-1.5 py-0.5 rounded bg-dark-border text-slate-300">Esc</kbd> Close</span>
                 <span><kbd className="px-1.5 py-0.5 rounded bg-dark-border text-slate-300">⌘K</kbd> Toggle</span>

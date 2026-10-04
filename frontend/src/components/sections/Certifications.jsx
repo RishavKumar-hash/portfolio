@@ -4,24 +4,31 @@ import { FiAward, FiExternalLink, FiCheckCircle } from "react-icons/fi";
 
 const certifications = [
   {
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services (AWS)",
+    title: "Java and Data Structures",
+    issuer: "Coursera / UC San Diego",
     year: "2024",
-    id: "CLF-C02",
-    badge: "☁️",
-    color: "border-amber-500/40 text-amber-400 bg-amber-500/10",
-    verify: "https://aws.amazon.com/certification/",
-    skills: ["Cloud Computing", "AWS Core Services", "Security & Compliance", "IAM Policies"],
-  },
-  {
-    title: "Java Programming: Principles of Software Design",
-    issuer: "UC San Diego (Coursera)",
-    year: "2024",
-    id: "Specialization Credential",
     badge: "☕",
     color: "border-cyan-500/40 text-cyan-400 bg-cyan-500/10",
     verify: "https://www.coursera.org/",
-    skills: ["Java OOP", "Software Architecture", "Design Patterns", "Data Structures"],
+    skills: ["Java OOP", "Data Structures", "Algorithms", "Software Design"],
+  },
+  {
+    title: "AWS Cloud Practitioner Essentials",
+    issuer: "Coursera / Amazon Web Services (AWS)",
+    year: "2024",
+    badge: "☁️",
+    color: "border-amber-500/40 text-amber-400 bg-amber-500/10",
+    verify: "https://aws.amazon.com/certification/",
+    skills: ["Cloud Architecture", "AWS Core Services", "IAM & Security", "Cloud Economy"],
+  },
+  {
+    title: "Introduction to Machine Learning",
+    issuer: "Coursera",
+    year: "2024",
+    badge: "🤖",
+    color: "border-emerald-500/40 text-emerald-400 bg-emerald-500/10",
+    verify: "https://www.coursera.org/",
+    skills: ["Supervised Learning", "Predictive Analytics", "Data Preprocessing", "Python"],
   },
 ];
 
@@ -42,7 +49,7 @@ export default function Certifications() {
           <div className="section-divider" />
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-3 gap-6">
           {certifications.map((cert, i) => (
             <motion.div
               key={cert.title}
@@ -61,7 +68,7 @@ export default function Certifications() {
                       <span className={`badge text-[10px] font-mono font-bold uppercase ${cert.color}`}>
                         {cert.issuer}
                       </span>
-                      <h3 className="text-lg font-bold text-slate-100 group-hover:text-cyan-400 transition-colors mt-1">
+                      <h3 className="text-base font-bold text-slate-100 group-hover:text-cyan-400 transition-colors mt-1">
                         {cert.title}
                       </h3>
                     </div>
@@ -71,10 +78,7 @@ export default function Certifications() {
 
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   <span className="badge bg-dark border border-dark-border text-slate-300 text-xs font-mono">
-                    Year: {cert.year}
-                  </span>
-                  <span className="badge bg-dark border border-dark-border text-cyan-400 text-xs font-mono">
-                    ID: {cert.id}
+                    Issued: {cert.year}
                   </span>
                 </div>
 

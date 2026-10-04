@@ -14,12 +14,10 @@ import BackgroundEffects from "./components/ui/BackgroundEffects";
 import ScrollProgress from "./components/layout/ScrollProgress";
 import BackToTop from "./components/layout/BackToTop";
 import CommandPalette from "./components/ui/CommandPalette";
-import TerminalModal from "./components/ui/TerminalModal";
 import ProjectDetailModal from "./components/ui/ProjectDetailModal";
 
 export default function App() {
   const [commandOpen, setCommandOpen] = useState(false);
-  const [terminalOpen, setTerminalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
   const openIamSection = () => {
@@ -40,12 +38,10 @@ export default function App() {
 
       <Header
         onOpenCommand={() => setCommandOpen(true)}
-        onOpenTerminal={() => setTerminalOpen(true)}
       />
 
       <main id="main-content">
         <Hero
-          onOpenTerminal={() => setTerminalOpen(true)}
           onOpenIam={openIamSection}
         />
         <Stats />
@@ -65,13 +61,7 @@ export default function App() {
       <CommandPalette
         isOpen={commandOpen}
         onClose={setCommandOpen}
-        onOpenTerminal={() => setTerminalOpen(true)}
         onOpenIam={openIamSection}
-      />
-
-      <TerminalModal
-        isOpen={terminalOpen}
-        onClose={() => setTerminalOpen(false)}
       />
 
       <ProjectDetailModal

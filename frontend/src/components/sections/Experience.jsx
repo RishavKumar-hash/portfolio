@@ -5,42 +5,52 @@ import { FiBriefcase, FiCalendar, FiMapPin, FiAward, FiCheckCircle } from "react
 const experiences = [
   {
     role: "System Engineer / Software Developer",
-    company: "Nokia Solutions & Networks — Contractor via TCS",
-    period: "Jul 2025 – Present",
-    location: "Noida, India (On-site)",
-    type: "Full-time Enterprise",
+    company: "Nokia Solutions — Contractor via Tata Consultancy Services (TCS)",
+    period: "Aug 2024 – Present",
+    location: "India (On-site)",
+    type: "Full-time Enterprise (2+ Yrs Exp)",
     color: "cyan",
-    impactBadge: "⚡ 50+ Production Fixes & 30% CI/CD Speedup",
+    impactBadge: "⚡ 5+ Microservices · 100+ Clients · 70+ Defect Fixes · 30% CI/CD Speedup",
     points: [
-      "Engineered and maintained 5+ backend enterprise identity and security modules using Java and Spring Boot for Nokia NIAM IAM platform, supporting 100+ global telecom & enterprise clients.",
-      "Diagnosed and resolved 50+ critical production issues across OAuth2 token issuance, JWT signature verification, RBAC permission resolution, and REST API endpoints.",
-      "Refactored legacy Python automation scripts in CI/CD deployment pipelines, accelerating deployment speed by 30% and eliminating manual deployment errors.",
-      "Collaborated across 3+ Agile Scrum squads, reviewed 100+ code commits, and authored comprehensive API & architectural documentation for 10+ core modules.",
+      "Designed, developed, integrated, and maintained 5+ Java, Spring Boot, Spring Security, and REST-based microservices supporting secure web and API experiences for 100+ enterprise clients.",
+      "Developed and integrated RESTful APIs consumed by React-based web applications, implementing authentication, authorization, access control, role-based workflows, validation, and business logic across 10+ modules.",
+      "Contributed to modern web application development by refactoring React/JavaScript network automation functionality using React Query, Keycloak SSO, feature-based components, and role-based routing across 6+ modules.",
+      "Implemented secure web and API functionality using IAM, AuthN/AuthZ, RBAC, JWT, OAuth2, Keycloak, input validation, and access-control checks.",
+      "Created and maintained 30+ automated API test cases covering functional testing, validation, authentication, authorization, positive/negative scenarios, error handling, and regression testing using JUnit, Mockito, and Postman.",
+      "Investigated and resolved 70+ production defects through debugging, log analysis, API validation, code investigation, root-cause analysis, and coordinated fixes.",
+      "Refactored Python-based CI/CD and deployment automation, reducing deployment preparation effort by approximately 30% and improving workflow repeatability.",
+      "Worked with Git, GitHub, Maven, Docker, Linux, Jenkins, and CI/CD pipelines to build, test, integrate, and deploy production software within Agile/Scrum sprint timelines across 3+ cross-functional teams.",
+      "Created and maintained technical documentation for 10+ modules covering application workflows, APIs, implementation details, testing scenarios, and operational procedures.",
     ],
-    tags: ["Java", "Spring Boot", "IAM", "RBAC", "OAuth2", "JWT", "REST API", "Python", "CI/CD", "PostgreSQL"],
-  },
-  {
-    role: "Software Developer Intern",
-    company: "Nokia Solutions & Networks",
-    period: "Aug 2024 – May 2025",
-    location: "Noida, India (On-site)",
-    type: "Internship",
-    color: "accent",
-    impactBadge: "🔒 20+ Security Defects Resolved & 30+ Automated API Tests",
-    points: [
-      "Contributed to 3+ IAM security modules covering authentication workflows, access control policies, privilege management, and RBAC securing 5+ enterprise environments.",
-      "Identified and remediated 20+ backend identity defects, improving application stability by 25% and reducing incident response time by 40%.",
-      "Designed and automated 30+ Java integration test suites for REST API security endpoints, ensuring zero regression across sprint releases.",
+    tags: [
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "REST APIs",
+      "React",
+      "JavaScript",
+      "React Query",
+      "Keycloak",
+      "OAuth2",
+      "JWT",
+      "RBAC",
+      "PostgreSQL",
+      "Docker",
+      "Jenkins",
+      "CI/CD",
+      "Python",
+      "JUnit / Mockito",
+      "Agile / Scrum",
     ],
-    tags: ["Java", "Spring Security", "IAM Security", "REST API", "NIAM", "JUnit / Mockito", "Git"],
   },
 ];
 
 const education = {
-  degree: "Bachelor of Engineering — Computer Science & Engineering",
+  degree: "B.E. in Computer Science and Engineering",
   university: "Chandigarh University",
   period: "Aug 2021 – Jul 2025",
   cgpa: "8.5 / 10",
+  location: "Punjab, India",
   coursework: [
     "Data Structures & Algorithms",
     "Database Management Systems",
@@ -48,6 +58,7 @@ const education = {
     "Computer Networks",
     "Object Oriented Programming",
     "Software Engineering",
+    "Web Application Architecture",
   ],
 };
 
@@ -160,7 +171,7 @@ export default function Experience() {
                       🎓 ACADEMIC BACKGROUND
                     </span>
                     <h3 className="text-xl font-bold text-slate-100">{education.degree}</h3>
-                    <p className="text-slate-300 font-semibold mt-0.5">{education.university}</p>
+                    <p className="text-slate-300 font-semibold mt-0.5">{education.university} — {education.location}</p>
                   </div>
                   <span className="badge bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono font-bold text-xs">
                     CGPA {education.cgpa}
@@ -174,7 +185,7 @@ export default function Experience() {
 
                 <div>
                   <p className="text-xs font-mono text-slate-400 uppercase tracking-wider font-semibold mb-2">
-                    Core Computer Science Coursework:
+                    Core Computer Science & Engineering Focus:
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {education.coursework.map((course) => (

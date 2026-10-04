@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { FiCode, FiMenu, FiX, FiDownload, FiTerminal, FiSearch } from "react-icons/fi";
+import { FiCode, FiMenu, FiX, FiDownload, FiSearch } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS } from "../../config/site";
 
 const navLinks = NAV_LINKS;
 
-export default function Header({ onOpenCommand, onOpenTerminal }) {
+export default function Header({ onOpenCommand }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -70,7 +70,7 @@ export default function Header({ onOpenCommand, onOpenTerminal }) {
               <a
                 key={link.href}
                 href={link.href}
-                className={`relative px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-xl transition-all ${
+                className={`relative px-3 py-1.5 text-xs sm:text-sm font-medium rounded-xl transition-all ${
                   isActive ? "text-primary font-bold" : "text-slate-400 hover:text-slate-100"
                 }`}
               >
@@ -92,32 +92,22 @@ export default function Header({ onOpenCommand, onOpenTerminal }) {
           {/* Command Palette Trigger */}
           <button
             onClick={onOpenCommand}
-            className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-dark-border bg-dark-card/80 text-slate-400 hover:text-primary hover:border-primary/50 text-xs font-mono transition-all"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-dark-border bg-dark-card/80 text-slate-400 hover:text-primary hover:border-primary/50 text-xs font-mono transition-all"
             title="Open Command Palette (Cmd+K)"
           >
             <FiSearch size={14} className="text-primary" />
-            <span>Search</span>
-            <kbd className="px-1.5 py-0.5 rounded bg-dark-border/80 text-[10px] text-slate-300">⌘K</kbd>
-          </button>
-
-          {/* Terminal Mode Trigger */}
-          <button
-            onClick={onOpenTerminal}
-            className="p-2 sm:px-3 sm:py-2 rounded-xl border border-cyan-500/30 bg-cyan-950/20 text-cyan-400 hover:bg-cyan-500/20 transition-all flex items-center gap-1.5 text-xs font-mono"
-            title="Open Interactive CLI Terminal"
-          >
-            <FiTerminal size={15} />
-            <span className="hidden sm:inline">CLI Mode</span>
+            <span className="hidden sm:inline">Search</span>
+            <kbd className="hidden sm:inline-block px-1.5 py-0.5 rounded bg-dark-border/80 text-[10px] text-slate-300">⌘K</kbd>
           </button>
 
           {/* Download Resume */}
           <a
             href="/RishavKumar_SDE.pdf"
             download
-            className="hidden md:inline-flex items-center gap-2 btn-primary text-xs py-2 px-4"
+            className="inline-flex items-center gap-2 btn-primary text-xs py-2 px-3.5"
           >
             <FiDownload size={14} />
-            Resume
+            <span>Resume</span>
           </a>
 
           {/* Mobile Menu Button */}
@@ -169,14 +159,6 @@ export default function Header({ onOpenCommand, onOpenTerminal }) {
                 >
                   <FiSearch size={14} /> Search & Commands (⌘K)
                 </button>
-                <a
-                  href="/RishavKumar_SDE.pdf"
-                  download
-                  onClick={() => setMobileOpen(false)}
-                  className="btn-primary text-xs py-2.5 text-center flex items-center justify-center gap-2"
-                >
-                  <FiDownload size={14} /> Download Resume
-                </a>
               </div>
             </nav>
           </motion.div>
