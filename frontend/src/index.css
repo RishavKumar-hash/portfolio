@@ -30,6 +30,20 @@
   }
 }
 
+/* Hide floating Netlify badge */
+#netlify-badge,
+.netlify-badge,
+[class*="netlify-badge"],
+[id*="netlify-badge"],
+iframe[title*="Netlify"],
+div[class*="netlify-badge"],
+[data-netlify-badge] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 @layer components {
   .skip-link {
     @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100]
@@ -104,4 +118,3 @@
     @apply flex-1 h-px bg-gradient-to-r from-dark-border via-primary/30 to-transparent hidden sm:block;
   }
 }
-
