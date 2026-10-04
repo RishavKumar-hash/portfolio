@@ -21,9 +21,11 @@ backend/src/main/resources/application-local.properties
 .DS_Store
 Thumbs.db
 
-# Vercel
+# Vercel & Netlify
 frontend/.vercel/
 .vercel/
+frontend/.netlify/
+.netlify/
 
 # Logs
 *.log
