@@ -26,7 +26,7 @@ Personal portfolio website showcasing my work as a **Backend Software Engineer**
 |-------|-------------|
 | **Frontend** | React 18, Vite, Tailwind CSS, Framer Motion, Three.js, React Three Fiber |
 | **Backend** | Spring Boot 3 (optional, local dev) |
-| **Deployment** | Vercel — HTTPS by default |
+| **Deployment** | Vercel & Netlify — HTTPS by default |
 
 ---
 

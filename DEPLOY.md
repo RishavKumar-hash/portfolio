@@ -41,6 +41,33 @@ npx vercel deploy --prod
 
 ---
 
+## Netlify Deployment
+
+This repository is pre-configured with [`netlify.toml`](file:///e:/portfolio/portfolio/netlify.toml) and client-side routing redirects ([`_redirects`](file:///e:/portfolio/portfolio/frontend/public/_redirects)).
+
+### Option 1: Automatic Deploy via Netlify Dashboard (Recommended)
+1. Go to [app.netlify.com](https://app.netlify.com) and log in.
+2. Click **"Add new site"** → **"Import an existing project"**.
+3. Select **GitHub** and choose your repository: **`RishavKumar-hash/portfolio`**.
+4. Netlify will automatically detect settings from `netlify.toml`:
+   - **Base directory:** `frontend`
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+5. Click **"Deploy portfolio"**.
+6. (Optional) In **Site configuration → Domain management**, click **"Change site name"** to set a custom subdomain like `rishavkumar-portfolio.netlify.app`.
+
+### Option 2: Deploy via CLI
+```bash
+# Build frontend
+cd frontend
+npm run build
+
+# Deploy to Netlify
+npx netlify deploy --prod --dir=dist
+```
+
+---
+
 ## Auto-deploy
 
-Push to `main` on GitHub — Vercel rebuilds automatically if connected.
+Push to `main` on GitHub — both Vercel and Netlify rebuild and deploy automatically if connected.
